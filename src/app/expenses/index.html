@@ -1,0 +1,37 @@
+<div layout="column" layout-fill>
+  <md-toolbar md-scroll-shrink layout="row"layout-align="center center">
+    <section layout="row">
+      <md-button href="#" class="md-raised" aria-label="Expenses">Expenses</md-button>
+    </section>
+    <div flex></div>
+  </md-toolbar>
+
+  <md-content md-scroll-y flex style="height: 300px">
+    <form ng-submit="addExpense()">
+      <md-text-float
+        label="Description"
+        ng-model="newExpense.description"
+        name="description"
+        type="text"
+        placeholder="Expense name">
+      </md-text-float>
+
+      <md-button class="md-raised md-primary" aria-label="Save">Save</md-button>
+    </form>
+
+    <md-text-float
+      label="Search"
+      ng-model="query"
+      ng-model-options="{ debounce: { 'default': 200 } }"
+      name="query"
+      type="text"
+      autofocus="true">
+    </md-text-float>
+
+    <md-card ng-repeat="expense in expenses">
+      <a href="#/expenses/{{ expense.id }}">{{ expense.description }}</a>
+    </md-card>
+
+  </md-content>
+  <md-button class="md-primary md-fab md-fab-bottom-right">+</md-button>
+</div>
