@@ -9,6 +9,6 @@
       };
       $scope.closeSidebar = function() {
         $mdSidenav('nav').close();
-      }
+      };
     });
 })();
