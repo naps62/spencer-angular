@@ -6,9 +6,10 @@
       'ngCookies',
       'ngTouch',
       'ngSanitize',
-      'ngResource',
       'ui.router',
-      'ngMaterial']
+      'ngMaterial',
+      'angularMoment',
+      'rails']
     )
     .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
       $stateProvider

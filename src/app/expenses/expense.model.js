@@ -3,7 +3,10 @@
 
   angular
     .module('spencer')
-    .factory('Expense', function(Config, $resource) {
-      return $resource(Config.apiUrl + '/expenses/:id');
+    .factory('Expense', function(Config, railsResourceFactory) {
+      return railsResourceFactory({
+        url: (Config.apiUrl + '/expenses'),
+        name: 'expense'
+      });
     });
 })();

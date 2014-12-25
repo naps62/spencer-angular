@@ -11,6 +11,22 @@
         placeholder="Expense name">
       </md-text-float>
 
+      <md-text-float
+        label="Value"
+        ng-model="newExpense.value"
+        name="description"
+        type="number"
+        placeholder="Value in €">
+      </md-text-float>
+
+      <md-text-float
+        label="Date"
+        ng-model="newExpense.date"
+        name="date"
+        type="date"
+        placeholder="Date">
+      </md-text-float>
+
     </md-content>
     <div class='md-actions' layout='row'>
       <md-button class="md-raised md-primary" aria-label="Save">Save</md-button>

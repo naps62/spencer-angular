@@ -11,7 +11,9 @@
   <md-item ng-repeat="expense in expenses">
     <md-item-content>
       <md-card flex>
-        {{ expense.description }}
+      <div><b>{{ expense.value }} €</b></div>
+      <div am-time-ago='expense.date'></div>
+      <div>{{ expense.description }}</div>
       </md-card>
     </md-item-content>
   </md-item>

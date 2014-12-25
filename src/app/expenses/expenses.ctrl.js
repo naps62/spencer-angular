@@ -11,7 +11,7 @@
 
       function fetch(query) {
         if (typeof query === undefined) { query = ''; }
-        Expense.query({query: query}, function(data) {
+        Expense.query({query: query}).then(function(data) {
           $scope.expenses = data;
         });
       };
@@ -38,7 +38,7 @@
     $scope.hide = hide;
 
     function submit() {
-      $scope.newExpense.$save(function() {
+      $scope.newExpense.create().then(function() {
         $mdDialog.hide();
       });
     };
