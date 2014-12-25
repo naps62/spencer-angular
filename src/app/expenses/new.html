@@ -13,11 +13,7 @@
     type="number">
   </md-text-float>
 
-  <md-text-float
-    label="Tags"
-    ng-model="newExpense.tag_list"
-    type="text">
-  </md-text-float>
+  <tag-list-input ng-model="newExpense.tagList"></tag-list-input>
 
   <md-text-float
     label="Date"

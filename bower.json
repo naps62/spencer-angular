@@ -13,7 +13,8 @@
     "angular": "~1.3.4",
     "components-font-awesome": "~4.2.0",
     "angular-moment": "latest",
-    "angularjs-rails-resource": "latest"
+    "angularjs-rails-resource": "latest",
+    "underscore": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.4"
