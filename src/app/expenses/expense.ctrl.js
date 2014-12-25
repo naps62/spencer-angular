@@ -3,6 +3,6 @@
 
   angular
     .module('spencer')
-    .controller('ExpenseCtrl', function($scope, Expense) {
+    .controller('ExpenseCtrl', function() {
     });
 })();

@@ -14,11 +14,14 @@
       <div><b>{{ expense.value }} €</b></div>
       <div am-time-ago='expense.date'></div>
       <div>{{ expense.description }}</div>
+      <span class='tag' ng-repeat='tag in expense.tagList'>{{ tag }}</span>
       </md-card>
     </md-item-content>
   </md-item>
 </md-list>
 
-<md-button class="md-primary md-fab md-fab-bottom-right u-fixed" ng-click='showNewExpenseDialog($event)'>
-  <i class='fa fa-plus'></i>
-</md-button>
+<a ui-sref='new_expense'>
+  <md-button class="md-primary md-fab md-fab-bottom-right u-fixed">
+    <i class='fa fa-plus'></i>
+  </md-button>
+</a>

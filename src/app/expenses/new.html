@@ -1,35 +1,31 @@
-<md-dialog aria-label='New expense'>
-  <form ng-submit="submit()">
-    <md-content>
-      <md-subheader class='md-sticky-no-effect'>New expense</md-subheader>
+<form ng-submit="submit()" class='md-padding'>
+  <md-subheader class='md-sticky-no-effect'>New expense</md-subheader>
 
-      <md-text-float
-        label="Description"
-        ng-model="newExpense.description"
-        name="description"
-        type="text"
-        placeholder="Expense name">
-      </md-text-float>
+  <md-text-float
+    label="Description"
+    ng-model="newExpense.description"
+    type="text">
+  </md-text-float>
 
-      <md-text-float
-        label="Value"
-        ng-model="newExpense.value"
-        name="description"
-        type="number"
-        placeholder="Value in €">
-      </md-text-float>
+  <md-text-float
+    label="Value"
+    ng-model="newExpense.value"
+    type="number">
+  </md-text-float>
 
-      <md-text-float
-        label="Date"
-        ng-model="newExpense.date"
-        name="date"
-        type="date"
-        placeholder="Date">
-      </md-text-float>
+  <md-text-float
+    label="Tags"
+    ng-model="newExpense.tag_list"
+    type="text">
+  </md-text-float>
 
-    </md-content>
-    <div class='md-actions' layout='row'>
-      <md-button class="md-raised md-primary" aria-label="Save">Save</md-button>
-    </div>
-  </form>
-</md-dialog>
+  <md-text-float
+    label="Date"
+    ng-model="newExpense.date"
+    type="date">
+  </md-text-float>
+
+  <div class='md-actions' layout='row'>
+    <md-button class="md-raised md-primary" aria-label="Save">Save</md-button>
+  </div>
+</form>

@@ -19,10 +19,10 @@
           controller: 'ExpensesCtrl',
           controllerAs: 'ctrl'
         })
-        .state('expense', {
-          url: '/expenses/:id',
-          templateUrl: 'expenses/show.html',
-          controller: 'ExpensesCtrl',
+        .state('new_expense', {
+          url: '/expenses/new',
+          templateUrl: 'app/expenses/new.html',
+          controller: 'NewExpenseCtrl',
           controllerAs: 'ctrl'
         });
 
