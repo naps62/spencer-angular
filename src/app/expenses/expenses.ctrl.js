@@ -3,7 +3,7 @@
 
   angular
     .module('spencer')
-    .controller('ExpensesCtrl', function($scope, Expense, $mdDialog) {
+    .controller('ExpensesCtrl', function($scope, Expense, $mdDialog, $toast) {
       $scope.fetch = fetch;
       $scope.showNewExpenseDialog = showNewExpenseDialog;
       $scope.$watch('query', $scope.fetch);
@@ -23,10 +23,10 @@
           targetEvent: event
         })
         .then(function(answer) {
-          $scope.alert = 'Expense added';
+          $toast.show('Expense added');
           $scope.fetch();
         }, function() {
-          $scope.alert = 'Cancelled';
+          $toast.show('Cancelled')
         });
       }
     });
