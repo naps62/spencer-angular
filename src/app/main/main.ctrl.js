@@ -10,5 +10,10 @@
       $scope.closeSidebar = function() {
         $mdSidenav('nav').close();
       };
+
+      $scope.sidebarItems = [
+        { text: 'Expenses', sref: 'expenses' },
+        { text: 'New expense', sref: 'new_expense' }
+      ]
     });
 })();

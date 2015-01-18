@@ -36,8 +36,18 @@
           <div flex></div>
           <md-button ng-click='closeSidebar()' flex aria-label="Close sidebar">Close</md-button>
         </md-toolbar>
-        <md-content class="md-padding">
-          sidenav
+        <md-content>
+          <md-list>
+            <md-item ng-repeat='item in sidebarItems'>
+              <md-item-content>
+                <md-button class="md-tile-content md-primary"
+                  ui-sref='{{ item.sref }}'
+                  ng-click='closeSidebar()'>
+                  {{ item.text }}
+                </div>
+              </md-item-content>
+              <md-divider ng-if="!$last"></md-divider>
+            </md-item>
         </md-content>
       </md-sidenav>
       <div layout='column' flex class='ui-view-container'>

@@ -21,7 +21,7 @@
 
           function currentTagsArray() {
             var array = $scope.ngModel.replace(/\s/g, '').split(',');
-            return _.reject(array, function(tag) { return tag.length === 0 });
+            return _.reject(array, function(tag) { return tag.length === 0; });
           }
 
           $scope.isActive = function(tagName) {
