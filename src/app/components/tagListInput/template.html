@@ -1,15 +1,13 @@
-<md-text-float
-  label="Tags"
-  type="text"
-  ng-model="currentTags">
-</md-text-float>
+<md-input-container>
+  <label>Tags</label>
+  <input type="text" ng-model="ngModel">
+</md-input-container>
 
-<div class='tag-list'>
+<div class='TagList'>
   <a
+    class="md-primary TagList-tag"
     ng-repeat='tag in allTags'
-    ng-click="toggle('{{ tag }}')"
-    class='tag'
-    ng-class="tagClass('{{ tag }}')">
+    ng-click="toggleTag('{{ tag }}')">
     {{ tag }}
   </a>
 </div>

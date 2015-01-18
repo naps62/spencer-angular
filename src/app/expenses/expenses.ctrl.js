@@ -11,8 +11,6 @@
         });
       }
 
-      console.log('asd');
-
       $scope.fetch = fetch;
       $scope.$watch('query', $scope.fetch);
       $scope.fetch();

@@ -1,25 +1,24 @@
 <form ng-submit="submit()" class='md-padding'>
   <md-subheader class='md-sticky-no-effect'>New expense</md-subheader>
 
-  <md-text-float
-    label="Description"
-    ng-model="newExpense.description"
-    type="text">
-  </md-text-float>
+  <md-input-container>
+    <label>Description</label>
+    <input type="text" ng-model="newExpense.description">
+  </md-input-container>
 
-  <md-text-float
-    label="Value"
-    ng-model="newExpense.value"
-    type="number">
-  </md-text-float>
+  <md-input-container>
+    <label>Value</label>
+    <input type="number" ng-model="newExpense.value">
+  </md-input-container>
 
   <tag-list-input ng-model="newExpense.tagList"></tag-list-input>
 
-  <md-text-float
-    label="Date"
-    ng-model="newExpense.date"
-    type="date">
-  </md-text-float>
+  <md-input-container>
+    <label>Date</label>
+    <input type="date" ng-model="newExpense.date">
+  </md-input-container>
+
+  <!-- <date-picker ng-model="newExpense.date"></date-picker> -->
 
   <div class='md-actions' layout='row'>
     <md-button class="md-raised md-primary" aria-label="Save">Save</md-button>

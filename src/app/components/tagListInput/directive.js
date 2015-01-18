@@ -12,15 +12,16 @@
         templateUrl: 'app/components/tagListInput/template.html',
         link: function($scope) {
           $scope.allTags = [];
-          $scope.currentTags = '';
+          $scope.ngModel = '';
 
           Tag.query().then(function(tags) {
             $scope.allTags = _.map(tags, function(tag) { return tag.name; });
-            $scope.currentTags = $scope.allTags.join(',');
+            $scope.ngModel = $scope.allTags.join(',');
           });
 
           function currentTagsArray() {
-            return $scope.currentTags.replace(/\s/g, '').split(',');
+            var array = $scope.ngModel.replace(/\s/g, '').split(',');
+            return _.reject(array, function(tag) { return tag.length === 0 });
           }
 
           $scope.isActive = function(tagName) {
@@ -35,23 +36,23 @@
             }
           };
 
-          $scope.toggle = function(tagName) {
+          $scope.toggleTag = function(tagName) {
             if ($scope.isActive(tagName)) {
-              $scope.remove(tagName);
+              removeTag(tagName);
             } else {
-              $scope.add(tagName);
+              addTag(tagName);
             }
           };
 
-          $scope.remove = function(tagName) {
-            $scope.currentTags = _.reject(currentTagsArray(), function(tag) { return tag === tagName; }).join(',');
-          };
+          function removeTag(tagName) {
+            $scope.ngModel = _.reject(currentTagsArray(), function(tag) { return tag === tagName; }).join(',');
+          }
 
-          $scope.add = function(tagName) {
+          function addTag(tagName) {
             var newTags = currentTagsArray();
             newTags.push(tagName);
-            $scope.currentTags = newTags.join(',');
-          };
+            $scope.ngModel = newTags.join(',');
+          }
         }
       };
     });
