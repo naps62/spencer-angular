@@ -31,18 +31,20 @@
     <![endif]-->
 
     <section layout="row" flex>
-      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="nav" md-is-locked-open="$media('gt-md')">
+      <md-sidenav class="md-sidenav-left md-whiteframe-z1" md-component-id="nav" md-is-locked-open="$media('gt-md')">
         <md-toolbar layout='row' layout-align='center right'>
           <div flex></div>
-          <md-button ng-click='closeSidebar()' flex>Menu</md-button>
+          <md-button ng-click='closeSidebar()' flex>Close</md-button>
         </md-toolbar>
         <md-content class="md-padding">
           sidenav
         </md-content>
       </md-sidenav>
       <div layout='column' flex class='ui-view-container'>
-        <md-toolbar layout='row' layout-align='center'>
-          <md-button ng-click='toggleSidebar()' hide-gt-md>Menu</md-button>
+        <md-toolbar layout='row' class="md-whiteframe-z1" layout-align='center'>
+          <md-button ng-click='toggleSidebar()' hide-gt-md>
+            <i class="fa fa-bars"></i>
+          </md-button>
           <div flex></div>
         </md-toolbar>
         <md-content ui-view class="md-padding">

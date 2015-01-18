@@ -4,6 +4,6 @@
   angular
     .module('spencer')
     .constant('Config', {
-      apiUrl: 'http://localhost:3001',
+      apiUrl: 'http://localhost:3000',
     });
 })();
