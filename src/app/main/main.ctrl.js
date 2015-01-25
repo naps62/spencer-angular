@@ -12,7 +12,8 @@
       };
 
       $scope.sidebarItems = [
-        { text: 'Expenses', sref: 'expenses' },
+        { text: 'Home', sref: 'days' },
+        { text: 'All Expenses', sref: 'expenses' },
         { text: 'New expense', sref: 'new_expense' }
       ]
     });

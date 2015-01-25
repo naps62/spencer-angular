@@ -9,8 +9,7 @@
       'ui.router',
       'ngMaterial',
       'angularMoment',
-      'rails',
-      'ui.bootstrap']
+      'rails']
     )
     .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
       $stateProvider
@@ -25,9 +24,15 @@
           templateUrl: 'app/expenses/new.html',
           controller: 'NewExpenseCtrl',
           controllerAs: 'ctrl'
+        })
+        .state('days', {
+          url: '/days',
+          templateUrl: 'app/days/index.html',
+          controller: 'DaysCtrl',
+          controllerAsl: 'ctrl'
         });
 
-      $urlRouterProvider.otherwise('/expenses');
+      $urlRouterProvider.otherwise('/days');
     });
 })();
 

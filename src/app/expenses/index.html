@@ -7,12 +7,12 @@
   <md-item ng-repeat="expense in expenses">
     <md-item-content>
       <md-card flex>
-      <md-card-content>
-        <div><b>{{ expense.value }} €</b></div>
-        <div am-time-ago='expense.date'></div>
-        <div>{{ expense.description }}</div>
-        <span class='tag' ng-repeat='tag in expense.tagList'>{{ tag }}</span>
-      </md-card-content>
+        <md-card-content>
+          <div><b>{{ expense.value }} €</b></div>
+          <div am-time-ago='expense.date'></div>
+          <div>{{ expense.description }}</div>
+          <span class='tag' ng-repeat='tag in expense.tagList'>{{ tag }}</span>
+        </md-card-content>
       </md-card>
     </md-item-content>
   </md-item>

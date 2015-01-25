@@ -1,0 +1,12 @@
+<md-list>
+  <md-item ng-repeat="day in days">
+    <md-item-context>
+      <md-card flex>
+        <md-card-content>
+          <div><b>{{ day.sum }} €</b></div>
+          <div>{{ day.date }}</div>
+        </md-card-content>
+      </md-card>
+    </md-item-content>
+  </md-item>
+</md-list>
