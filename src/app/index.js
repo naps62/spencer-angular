@@ -9,7 +9,8 @@
       'ui.router',
       'ngMaterial',
       'angularMoment',
-      'rails']
+      'rails',
+      'ui.bootstrap']
     )
     .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
       $stateProvider
