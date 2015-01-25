@@ -4,10 +4,11 @@
 </md-input-container>
 
 <div class='TagList'>
-  <a
-    class="md-primary TagList-tag"
+  <md-button
+    class="md-raised md-primary TagList-tag"
+    href="#"
     ng-repeat='tag in allTags'
     ng-click="toggleTag('{{ tag }}')">
     {{ tag }}
-  </a>
+  </md-button>
 </div>
