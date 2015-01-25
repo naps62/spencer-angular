@@ -3,15 +3,6 @@
   <input type"=text" name="query" ng-model="query" ng-model-options="{ debounce: { 'default': 200 } }" autofocus="true">
 </md-input-container>
 
-<accordion close-other="oneAtATime">
-  <accordion-group heading="Heading" is-open="true" is-disabled="false">
-    Content
-  </accordion-group>
-  <accordion-group heading="Heading" is-open="false" is-disabled="false">
-    Content
-  </accordion-group>
-</accordion>
-
 <md-list>
   <md-item ng-repeat="expense in expenses">
     <md-item-content>
