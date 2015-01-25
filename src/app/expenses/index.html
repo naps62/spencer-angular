@@ -3,14 +3,25 @@
   <input type"=text" name="query" ng-model="query" ng-model-options="{ debounce: { 'default': 200 } }" autofocus="true">
 </md-input-container>
 
+<accordion close-other="oneAtATime">
+  <accordion-group heading="Heading" is-open="true" is-disabled="false">
+    Content
+  </accordion-group>
+  <accordion-group heading="Heading" is-open="false" is-disabled="false">
+    Content
+  </accordion-group>
+</accordion>
+
 <md-list>
   <md-item ng-repeat="expense in expenses">
     <md-item-content>
       <md-card flex>
-      <div><b>{{ expense.value }} €</b></div>
-      <div am-time-ago='expense.date'></div>
-      <div>{{ expense.description }}</div>
-      <span class='tag' ng-repeat='tag in expense.tagList'>{{ tag }}</span>
+      <md-card-content>
+        <div><b>{{ expense.value }} €</b></div>
+        <div am-time-ago='expense.date'></div>
+        <div>{{ expense.description }}</div>
+        <span class='tag' ng-repeat='tag in expense.tagList'>{{ tag }}</span>
+      </md-card-content>
       </md-card>
     </md-item-content>
   </md-item>
