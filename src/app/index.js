@@ -9,8 +9,11 @@
       'ui.router',
       'ngMaterial',
       'angularMoment',
-      'rails']
+      'js-data']
     )
+    .config(function(Config, DSProvider) {
+      DSProvider.defaults.basePath = Config.apiUrl;
+    })
     .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
       $stateProvider
         .state('expenses', {

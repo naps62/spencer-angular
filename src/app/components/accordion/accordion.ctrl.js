@@ -16,9 +16,9 @@
       };
 
       this.removeGroup = function(group) {
-        var index = this.groups.indexOf(group);
+        var index = this.items.indexOf(group);
         if (index !== -1) {
-          this.groups.splice(index, 1);
+          this.items.splice(index, 1);
         }
       };
 

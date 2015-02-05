@@ -3,10 +3,12 @@
 
   angular
     .module('spencer')
-    .factory('Day', function(Config, railsResourceFactory) {
-      return railsResourceFactory({
-        url: (Config.apiUrl + '/days'),
-        name: 'day'
+    .factory('Day', function(Config, DS) {
+      return DS.defineResource({
+        name: 'day',
+        endpoint: 'days',
+        idAttribute: 'date',
+        methods: {  }
       });
     });
 })();

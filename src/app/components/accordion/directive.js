@@ -29,6 +29,7 @@
       },
       templateUrl: 'app/components/accordion/accordionItem.html',
       link: function($scope, element, attrs, accordionCtrl) {
+        // $scope.isOpen = false;
         accordionCtrl.addGroup($scope);
 
         $scope.toggle = function toggle() {

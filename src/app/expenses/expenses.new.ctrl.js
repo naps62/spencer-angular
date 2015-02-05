@@ -6,7 +6,7 @@
     .controller('NewExpenseCtrl', function($scope, $mdDialog, Expense, $location) {
 
       function submit() {
-        $scope.newExpense.create().then(function() {
+        Expense.create($scope.newExpense).then(function() {
           $mdDialog.hide();
           $location.path('/');
         });
@@ -20,8 +20,7 @@
         $mdDialog.hide();
       }
 
-      $scope.newExpense = new Expense();
-      console.log($scope.newExpense);
+      $scope.newExpense = Expense.createInstance();
       $scope.submit = submit;
       $scope.cancel = cancel;
       $scope.hide = hide;

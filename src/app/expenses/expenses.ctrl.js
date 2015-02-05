@@ -6,8 +6,8 @@
     .controller('ExpensesCtrl', function($scope, Expense) {
       function fetch(query) {
         if (typeof query === undefined) { query = ''; }
-        Expense.query({query: query}).then(function(data) {
-          $scope.expenses = data;
+        Expense.findAll({query: query}).then(function(expenses) {
+          $scope.expenses = expenses;
         });
       }
 

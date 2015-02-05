@@ -14,7 +14,7 @@
           $scope.allTags = [];
           $scope.ngModel = '';
 
-          Tag.query().then(function(tags) {
+          Tag.findAll().then(function(tags) {
             $scope.allTags = _.map(tags, function(tag) { return tag.name; });
             $scope.ngModel = $scope.allTags.join(',');
           });
