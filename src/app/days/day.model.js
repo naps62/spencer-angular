@@ -7,13 +7,12 @@
       return DS.defineResource({
         name: 'day',
         endpoint: 'days',
-        idAttribute: 'date',
 
         relations: {
           hasMany: {
             expense: {
               localField: 'expenses',
-              foreignKey: 'date',
+              foreignKey: 'day_id',
             }
           }
         }
