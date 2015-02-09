@@ -3,11 +3,10 @@
 
   angular
     .module('spencer')
-    .factory('Expense', function(Config, DS) {
+    .factory('Expense', function(DS) {
       return DS.defineResource({
         name: 'expense',
-        endpoint: 'expenses',
-        methods: {  }
+        endpoint: 'expenses'
       });
     });
 })();

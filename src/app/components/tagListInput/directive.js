@@ -3,7 +3,7 @@
 
   angular
     .module('spencer')
-    .directive('tagListInput', function(Tag) {
+    .directive('tagListInput', function(Tag, _) {
       return {
         restrict: 'E',
         scope: {
