@@ -7,7 +7,6 @@
       'ngTouch',
       'ngSanitize',
       'ui.router',
-      'ngMaterial',
       'angularMoment',
       'js-data']
     )
@@ -29,7 +28,7 @@
           controllerAs: 'ctrl'
         });
 
-      $urlRouterProvider.otherwise('/days');
+      $urlRouterProvider.otherwise('/expenses');
     });
 })();
 

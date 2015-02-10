@@ -1,26 +1,32 @@
 <form ng-submit="submit()" class='md-padding'>
-  <md-subheader class='md-sticky-no-effect'>New expense</md-subheader>
+  <h4>New expense</h4>
 
-  <md-input-container>
-    <label>Description</label>
-    <input type="text" ng-model="newExpense.description">
-  </md-input-container>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="description" ng-model="newExpense.description">
+      <label for="description">Description</label>
+    </div>
 
-  <md-input-container>
-    <label>Value</label>
-    <input type="number" ng-model="newExpense.value">
-  </md-input-container>
+    <div class="input-field col s12">
+      <input type="number" name="value" ng-model="newExpense.value">
+      <label for="value">Value</label>
+    </div>
 
-  <tag-list-input ng-model="newExpense.tagList"></tag-list-input>
+    <div class="col s12">
+      <tag-list-input ng-model="newExpense.tagList"></tag-list-input>
+    </div>
 
-  <md-input-container>
-    <label>Date</label>
-    <input type="date" ng-model="newExpense.date">
-  </md-input-container>
+    <div class="input-field col s12">
+      <input type="number" name="date" ng-model="newExpense.date">
+      <label for="date">Date</label>
+    </div>
 
-  <!-- <date-picker ng-model="newExpense.date"></date-picker> -->
-
-  <div class='md-actions' layout='row'>
-    <md-button class="md-raised md-primary" aria-label="Save">Save</md-button>
+    <div class="col s12">
+      <button class='btn waves-effect waves-light right' type='submit' name='action'>
+        Save
+        <i class='mdi-content-send right'></i>
+      </button>
+    </div>
   </div>
+
 </form>

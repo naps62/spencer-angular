@@ -9,8 +9,8 @@
 
     <!-- build:css({.tmp,src}) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="../bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/materialize/bin/materialize.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -25,42 +25,27 @@
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body layout="column" layout-fill ng-controller='MainCtrl'>
+  <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" data-activates="slide-out" class="brand-logo">Spencer</a>
+          <ul id="nav-mobile" class="right side-nav">
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-    <section layout="row" flex>
-      <md-sidenav class="md-sidenav-left md-whiteframe-z1" md-component-id="nav" md-is-locked-open="$media('gt-md')">
-        <md-toolbar layout='row' class='md-whiteframe-z1' layout-align='center right'>
-          <div flex></div>
-          <md-button ng-click='closeSidebar()' flex aria-label="Close sidebar">Close</md-button>
-        </md-toolbar>
-        <md-content>
-          <md-list>
-            <md-item ng-repeat='item in sidebarItems'>
-              <md-item-content>
-                <md-button class="md-tile-content md-primary"
-                  ui-sref='{{ item.sref }}'
-                  ng-click='closeSidebar()'>
-                  {{ item.text }}
-                </div>
-              </md-item-content>
-              <md-divider ng-if="!$last"></md-divider>
-            </md-item>
-        </md-content>
-      </md-sidenav>
-      <div layout='column' flex class='ui-view-container'>
-        <md-toolbar layout='row' class="md-whiteframe-z1" layout-align='center'>
-          <md-button ng-click='toggleSidebar()' hide-gt-md aria-label="Open sidebar">
-            <i class="fa fa-bars"></i>
-          </md-button>
-          <div flex></div>
-        </md-toolbar>
-        <md-content ui-view class="md-padding">
-        </md-content>
-      </div>
-    </section>
+    <ul id="slide-out" class="side-nav full">
+      <li ng-repeat='item in sidebarItems'>
+        <a ui-sref='{{ item.sref }}'>{{ item.text }}</a>
+      </li>
+    </ul>
+
+    <div ui-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -74,6 +59,7 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
@@ -81,13 +67,12 @@
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="../bower_components/angular-aria/angular-aria.js"></script>
-    <script src="../bower_components/angular-material/angular-material.js"></script>
     <script src="../bower_components/moment/moment.js"></script>
     <script src="../bower_components/angular-moment/angular-moment.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/js-data/dist/js-data.js"></script>
     <script src="../bower_components/js-data-angular/dist/js-data-angular.js"></script>
+    <script src="../bower_components/materialize/bin/materialize.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -97,12 +82,12 @@
     <script src="app/components/tagListInput/directive.js"></script>
     <script src="app/components/datePicker/directive.js"></script>
     <script src="app/tags/tag.model.js"></script>
-    <script src="app/main/main.ctrl.js"></script>
     <script src="app/expenses/expenses.new.ctrl.js"></script>
     <script src="app/expenses/expenses.ctrl.js"></script>
     <script src="app/expenses/expense.model.js"></script>
     <script src="app/core/underscore.js"></script>
     <script src="app/core/toast.js"></script>
+    <script src="app/core/materialize.js"></script>
     <script src="app/core/config.js"></script>
     <!-- endinject -->
 

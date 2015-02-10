@@ -1,25 +1,20 @@
-<md-input-container>
-  <label>Search</label>
-  <input type"=text" name="query" ng-model="query" ng-model-options="{ debounce: { 'default': 200 } }" autofocus="true">
-</md-input-container>
+<div class="input-field">
+  <input type="text" name="query" ng-model="query" ng-model-options="{debounce: { 'default': 200 }}" autofocus="true">
+  <label for="query">Search</label>
+</div>
 
-<md-list>
-  <md-item ng-repeat="expense in expenses">
-    <md-item-content>
-      <md-card flex>
-        <md-card-content>
-          <div><b>{{ expense.value }} €</b></div>
-          <div am-time-ago='expense.date'></div>
-          <div>{{ expense.description }}</div>
-          <span class='tag' ng-repeat='tag in expense.tagList'>{{ tag }}</span>
-        </md-card-content>
-      </md-card>
-    </md-item-content>
-  </md-item>
-</md-list>
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Latest expenses</h4></li>
+  <li class="collection-item" ng-repeat="expense in expenses">
+    <div><b>{{ expense.value }} €</b></div>
+    <div am-time-ago='expense.date'></div>
+    <div>{{ expense.description }}</div>
+    <span class='tag' ng-repeat='tag in expense.tagList'>{{ tag }}</span>
+  </li>
+</ul>
 
-<a ui-sref='new_expense'>
-  <md-button class="md-primary md-fab md-fab-bottom-right u-fixed" aria-label="New expense">
-    <i class='fa fa-plus'></i>
-  </md-button>
-</a>
+<div class="FloatingCTA">
+  <a ui-sref='new_expense' class='btn-floating btn-large waves-effect waves-light red'>
+    <i class='mdi-content-add'></i>
+  </a>
+</div>

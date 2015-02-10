@@ -1,17 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
 @import "styles/reset";
-@import "styles/utilities";
 @import "styles/typography";
 @import "styles/animations";
+@import "styles/suit/base";
 @import "components/base";
-
-html {
-  font-family: 'Roboto Slab', serif;
-}
-
-[layout=row] {
-  flex-direction: row;
-}
-
-// injector
-// endinjector

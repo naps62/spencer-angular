@@ -1,14 +1,14 @@
-<md-input-container>
-  <label>Tags</label>
-  <input type="text" ng-model="ngModel">
-</md-input-container>
+<div class='input-field'>
+  <input type='text' ng-model='ngModel' name='tagList'>
+  <label for='tagList'>Tags</label>
+</div>
 
 <div class='TagList'>
-  <md-button
-    class="md-raised md-primary TagList-tag"
+  <a
+    class="TagList-tag btn waves-effect waves-light"
     href="#"
     ng-repeat='tag in allTags'
     ng-click="toggleTag('{{ tag }}')">
     {{ tag }}
-  </md-button>
+  </a>
 </div>
